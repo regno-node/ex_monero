@@ -45,4 +45,20 @@ defmodule Monero.Daemon do
       parser: &Monero.Daemon.Parser.parse/3
     }
   end
+
+  defp rpc_request_binary(method, params \\ nil) do
+    request_binary("json_rpc", %{jsonrpc: "2.0", method: method, params: params})
+  end
+
+  defp request_binary(action, data \\ %{}) do
+    path = "/#{action}"
+
+    %Monero.Operation.Query{
+      action: action,
+      path: path,
+      data: data,
+      service: :daemon,
+      parser: &Monero.Daemon.Parser.parse_binary/3
+    }
+  end
 end

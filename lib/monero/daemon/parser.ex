@@ -17,4 +17,12 @@ defmodule Monero.Daemon.Parser do
   def parse({:ok, %{body: body}}, _, config) do
     {:ok, config[:json_codec].decode!(body)}
   end
+
+  def parse_binary({:error, result}, _, _), do: {:error, result}
+
+  def parse_binary({:ok, %{body: ""}}, _, _), do: {:ok, %{}}
+
+  def parse_binary({:ok, %{body: body}}, action, config) when action == "json_rpc" do
+    {:ok, body}
+  end
 end
