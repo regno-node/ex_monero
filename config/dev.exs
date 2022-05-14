@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :monero,
   debug_requests: true
