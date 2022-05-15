@@ -5,7 +5,7 @@ defmodule Monero.Config.Defaults do
 
   @common %{
     http_client: Monero.Request.Hackney,
-    json_codec: Poison,
+    json_codec: Jason,
     retries: [
       max_attempts: 10,
       base_backoff_in_ms: 10,

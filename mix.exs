@@ -33,14 +33,14 @@ defmodule Monero.Mixfile do
 
   defp deps do
     [
-      {:hackney, "~> 1.9", optional: true},
-      {:jsx, "~> 2.8", optional: true},
-      {:poison, ">= 3.0.0", optional: true},
-      {:httpdigest, "~> 0.0.3"},
+      {:hackney, "~> 1.18", optional: true},
+      {:jsx, "~> 3.1", optional: true},
+      {:jason, ">= 1.3.0", optional: true},
+      {:httpdigest, "~> 0.0.4"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
       {:dialyxir, "~> 0.5.0", only: :dev},
       {:bypass, "~> 1.0", only: :test},
-      {:excoveralls, "~> 0.10", only: :test}
+      {:excoveralls, "~> 0.14", only: :test}
     ]
   end
 

@@ -15,7 +15,7 @@ defmodule Monero.RequestTest do
 
     test "encodes data", %{config: config, url: url, data: data, bypass: bypass} do
       Bypass.expect_once(bypass, fn conn ->
-        expected = "{\"params\":[912345],\"method\":\"on_getblockhash\",\"jsonrpc\":\"2.0\",\"id\":\"0\"}"
+        expected = "{\"id\":\"0\",\"jsonrpc\":\"2.0\",\"method\":\"on_getblockhash\",\"params\":[912345]\}"
 
         assert "/json_rpc" == conn.request_path
         assert "POST" == conn.method
