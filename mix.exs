@@ -39,7 +39,7 @@ defmodule Monero.Mixfile do
       {:httpdigest, "~> 0.0.4"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
       {:dialyxir, "~> 0.5.0", only: :dev},
-      {:bypass, "~> 1.0", only: :test},
+      {:bypass, "~> 2.1.0", only: :test},
       {:excoveralls, "~> 0.14", only: :test}
     ]
   end
